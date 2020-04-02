@@ -1,6 +1,17 @@
 import React, { Fragment } from 'react';
+import triangles_bkg from "./triangles_bkg.svg";
+import Navbar from '../layout/Navbar';
 
 const Home = () => {
+  const bkg_img_col_style = {
+    paddingRight: "0",
+    paddingLeft: "0"
+  };
+
+  const bkg_img_style = {
+    width: "100%"
+  };
+
   return (
     <Fragment>
       <div className="row blue-bkg nm" id="top-box">
@@ -8,13 +19,9 @@ const Home = () => {
           <img src="https://via.placeholder.com/180" alt="Profile" className="circle responsive-img" />
         </div>
       </div>
-      <div className="row blue-bkg nm">
-        <div className="col s2 offset-s3 nav-text">Home</div>
-        <div className="col s2 nav-text">Bio</div>
-        <div className="col s2 nav-text">Projects</div>
-      </div>
+      <Navbar />
       <div className="row pink-bkg nm">
-        <div className="col s12">background triangles image</div>
+        <div className="col s12" style={bkg_img_col_style}><img src={triangles_bkg} className="responsive-img" alt="triangles" style={bkg_img_style}></img></div>
       </div>
     </Fragment>
   );

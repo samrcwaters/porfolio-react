@@ -1,0 +1,29 @@
+a {
+  color: black;
+  position: relative;
+  display: inline-block;
+  margin-bottom: 5px;
+}
+
+a::after {
+  content: '';
+  position: absolute;
+  display: block;
+  bottom: 0;
+  height: 2px;
+  width: 0;
+  border-bottom: 2px solid black;
+}
+
+a, a::after {
+  transition: all 0.3s ease;
+}
+
+a:hover::after {
+  left: 0;
+  width: 100%;
+}
+
+#nav-row {
+  padding-bottom: 1em;
+}
