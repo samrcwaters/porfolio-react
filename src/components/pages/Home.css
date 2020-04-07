@@ -1,0 +1,16 @@
+#bkg_img_col {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+#bkg_img {
+  width: 100%;
+}
+
+#profile_img_col {
+  transition: all 0.5s ease;
+}
+
+#profile_img_col:hover {
+  width: 16.8%;
+}

@@ -1,27 +1,28 @@
 import React, { Fragment } from 'react';
 import triangles_bkg from "./triangles_bkg.svg";
 import Navbar from '../layout/Navbar';
+import { CSSTransition } from 'react-transition-group';
+import "./Home.css";
 
 const Home = () => {
-  const bkg_img_col_style = {
-    paddingRight: "0",
-    paddingLeft: "0"
-  };
-
-  const bkg_img_style = {
-    width: "100%"
+  const showBio = () => {
+    console.log("Bio!");
   };
 
   return (
     <Fragment>
       <div className="row blue-bkg nm" id="top-box">
-        <div className="col s12">
-          <img src="https://via.placeholder.com/180" alt="Profile" className="circle responsive-img" />
-        </div>
+        <CSSTransition>
+          <div className="col s12" id="profile_img_col">
+            <img src="https://via.placeholder.com/180" alt="Profile" className="circle responsive-img" />
+          </div>
+        </CSSTransition>
       </div>
-      <Navbar />
+      <Navbar showBio={showBio} />
       <div className="row pink-bkg nm">
-        <div className="col s12" style={bkg_img_col_style}><img src={triangles_bkg} className="responsive-img" alt="triangles" style={bkg_img_style}></img></div>
+        <div className="col s12" id="bkg_img_col">
+          <img src={triangles_bkg} className="responsive-img" alt="triangles" id="bkg_img"></img>
+        </div>
       </div>
     </Fragment>
   );
