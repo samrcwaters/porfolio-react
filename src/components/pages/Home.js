@@ -1,18 +1,16 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useState } from 'react';
 import triangles_bkg from "./triangles_bkg.svg";
 import Navbar from '../layout/Navbar';
 import { CSSTransition } from 'react-transition-group';
 import "./Home.css";
 
 const Home = () => {
-  const showBio = () => {
-    console.log("Bio!");
-  };
+  const [showBio, setShowBio] = useState(true);
 
   return (
     <Fragment>
       <div className="row blue-bkg nm" id="top-box">
-        <CSSTransition>
+        <CSSTransition in={showBio} timeout={200}>
           <div className="col s12" id="profile_img_col">
             <img src="https://via.placeholder.com/180" alt="Profile" className="circle responsive-img" />
           </div>
